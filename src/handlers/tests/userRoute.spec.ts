@@ -5,7 +5,7 @@ const request = supertest(app);
 
 export let token: string;
 describe("Testing User Routes", () => {
-  it("Should successfully create new user with status 201", async () => {
+  it("Should successfully create new user with status 201", async (done: any) => {
     try {
       const user = {
         firstName: "Hieu",
@@ -18,6 +18,7 @@ describe("Testing User Routes", () => {
         .set("Accept", "application/json")
         .expect(201);
       token = usersResponse.body;
+      done();
     } catch (e) {
       console.log(e);
     }

@@ -20,6 +20,7 @@ describe("Testing Product Routes", () => {
         .set("Accept", "application/json")
         .set("Authorization", `Bearer ${token}`)
         .expect(201);
+      done();
     } catch (e) {
       console.log(e);
     }

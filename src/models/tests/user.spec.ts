@@ -4,12 +4,12 @@ const store = new UsersStore();
 
 describe("Test User Model", () => {
   it("Should create new user", async () => {
-    const response = await store.show(2);
+    const response = await store.show(1);
     expect(response.first_name).toBeDefined();
   });
 
   it("Should show user by his/her id", async () => {
-    const result = await store.show(2);
+    const result = await store.show(1);
     expect(result.last_name).toBeDefined();
   });
 
