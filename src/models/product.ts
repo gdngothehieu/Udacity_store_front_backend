@@ -8,7 +8,7 @@ export type Product = {
 };
 
 export class ProductsStore {
-  async Index(): Promise<Product[]> {
+  async index(): Promise<Product[]> {
     try {
       const connect = await Client.connect();
       const sql = "SELECT * FROM products";
@@ -20,7 +20,7 @@ export class ProductsStore {
     }
   }
 
-  async Show(id: number): Promise<Product> {
+  async show(id: number): Promise<Product> {
     try {
       const connect = await Client.connect();
       const sql = "SELECT * FROM products WHERE id=($1)";
@@ -32,7 +32,7 @@ export class ProductsStore {
     }
   }
 
-  async Create(p: Product): Promise<Product> {
+  async create(p: Product): Promise<Product> {
     try {
       const connect = await Client.connect();
       const sql =

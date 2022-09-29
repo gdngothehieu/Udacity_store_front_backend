@@ -1,5 +1,5 @@
 {
-  "name": "storefront_backend",
+  "name": "Udacity_store_front_backend",
   "version": "0.1.0",
   "description": "## Getting Started",
   "main": "server.ts",
@@ -7,9 +7,9 @@
     "build": " npx tsc",
     "start": "ts-node src/server.ts",
     "watch": "npm run build && tsc-watch --esModuleInterop src/server.ts --outDir ./dist --onSuccess \"node ./dist/server.js\"",
-    "delete_TEST_DB": "db-migrate db:drop storefront_test",
+    "delete_test": "db-migrate db:drop test_db",
     "migrate_up": "db-migrate up --env test",
-    "test": "npm run delete_TEST_DB && db-migrate db:create storefront_test --env create && npm run migrate_up && npm run build && jasmine && npm run delete_TEST_DB"
+    "test": "npm run delete_test && db-migrate db:create test_db --env create && npm run migrate_up && npm run build && jasmine && npm run delete_test"
   },
   "author": "Udacity",
   "license": "ISC",

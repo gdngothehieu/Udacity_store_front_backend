@@ -9,7 +9,7 @@ export type Order = {
 };
 
 export class OrdersStore {
-  async Index(): Promise<Order[]> {
+  async index(): Promise<Order[]> {
     try {
       const connect = await Client.connect();
       const sql = "SELECT * FROM orders";
@@ -21,7 +21,7 @@ export class OrdersStore {
     }
   }
 
-  async Show(id: number): Promise<Order> {
+  async show(id: number): Promise<Order> {
     try {
       const connect = await Client.connect();
       const sql = "SELECT * FROM orders WHERE id=($1)";
@@ -33,7 +33,7 @@ export class OrdersStore {
     }
   }
 
-  async Create(o: Order): Promise<Order> {
+  async create(o: Order): Promise<Order> {
     try {
       const connect = await Client.connect();
       const sql =
@@ -51,7 +51,7 @@ export class OrdersStore {
     }
   }
 
-  async CurrentByUser(userId: number): Promise<Order> {
+  async currentByUser(userId: number): Promise<Order> {
     try {
       const connect = await Client.connect();
       const sql =
@@ -66,7 +66,7 @@ export class OrdersStore {
     }
   }
 
-  async CompleteByUser(userId: number): Promise<Order[]> {
+  async completeByUser(userId: number): Promise<Order[]> {
     try {
       const connect = await Client.connect();
       const sql =
