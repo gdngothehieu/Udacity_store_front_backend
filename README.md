@@ -17,7 +17,7 @@ Your application must make use of the following libraries:
 * Add a file name ".env" with the following content:
   MY_HOST=localhost
   MY_DB=postgres
-  MY_TEST_DB=postgres
+  MY_TEST_DB=store_front_test
   MY_USER=postgres
   MY_PASSWORD=postgres
   MY_ENV=test
@@ -34,15 +34,15 @@ Make sure that you're inside the project root in your terminal
 
 You should install some dependencies by running npm i and write the name of each of the following :
 
-bcrypt 
-body-parser 
-db-migrate 
-db-migrate-pg 
-dotenv 
-express 
-jsonwebtoken 
-pg 
-typescript 
+bcrypt
+body-parser
+db-migrate
+db-migrate-pg
+dotenv
+express
+jsonwebtoken
+pg
+typescript
 @types/bcrypt
 @types/express
 @types/jasmine
