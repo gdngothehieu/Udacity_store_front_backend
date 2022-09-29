@@ -5,9 +5,7 @@ import { token } from "./userRoute.spec";
 const request = supertest(app);
 
 describe("Testint Order Route", () => {
-  it("Should create order with 'complete' status 201", (done: (
-    err?: unknown
-  ) => void) => {
+  it("Should create order with 'complete' status 201", () => {
     try {
       const order = {
         productid: 1,
@@ -20,16 +18,11 @@ describe("Testint Order Route", () => {
         .send(order)
         .set("Accept", "application/json")
         .set("Authorization", `Bearer ${token}`)
-        .expect(201)
-        .then((res) => {
-          done();
-        });
+        .expect(201);
     } catch (e) {}
   });
 
-  it("Should create order with status 201", async (done: (
-    err?: unknown
-  ) => void) => {
+  it("Should create order with status 201", async () => {
     try {
       const order = {
         productid: 1,
@@ -48,9 +41,7 @@ describe("Testint Order Route", () => {
     }
   });
 
-  it("Should show current order by user with status 200", async (done: (
-    err?: unknown
-  ) => void) => {
+  it("Should show current order by user with status 200", async () => {
     try {
       const response = await request
         .get("/orders/current-by-user/1")
@@ -61,9 +52,7 @@ describe("Testint Order Route", () => {
     }
   });
 
-  it("Should show complete order by user with status 200", async (done: (
-    err?: unknown
-  ) => void) => {
+  it("Should show complete order by user with status 200", async () => {
     try {
       const response = await request
         .get("/orders/complete-by-user/1")
@@ -72,9 +61,7 @@ describe("Testint Order Route", () => {
     } catch (e) {}
   });
 
-  it("Should show order by its id with status 200", async (done: (
-    err?: unknown
-  ) => void) => {
+  it("Should show order by its id with status 200", async () => {
     try {
       const response = await request
         .get("/orders/2")
@@ -85,27 +72,18 @@ describe("Testint Order Route", () => {
     }
   });
 
-  it("Should show all orders with status 200", async (done: (
-    err?: unknown
-  ) => void) => {
+  it("Should show all orders with status 200", async () => {
     try {
       const response = await request
         .get("/orders")
         .set("Authorization", `Bearer ${token}`)
-        .expect("Content-Type", /json/)
-        .expect(200)
-        .then((res) => {
-          console.log(res.body);
-          done();
-        });
+        .expect(200);
     } catch (e) {
       console.log(e);
     }
   });
 
-  it("Should add product to an order_id with status 201", async (done: (
-    err?: unknown
-  ) => void) => {
+  it("Should add product to an order_id with status 201", async () => {
     try {
       const data = {
         product_id: 1,
@@ -116,26 +94,18 @@ describe("Testint Order Route", () => {
         .send(data)
         .set("Accept", "application/json")
         .set("Authorization", `Bearer ${token}`)
-        .expect("Content-Type", /json/)
         .expect(201);
     } catch (e) {
       console.log(e);
     }
   });
 
-  it("Should get orders by order_id foreign key with status 200", async (done: (
-    err?: unknown
-  ) => void) => {
+  it("Should get orders by order_id foreign key with status 200", async () => {
     try {
       const response = await request
         .get("/orders/by_order_id/1")
         .set("Authorization", `Bearer ${token}`)
-        .expect("Content-Type", /json/)
-        .expect(200)
-        .then((res) => {
-          console.log(res.body);
-          done();
-        });
+        .expect(200);
     } catch (e) {
       console.log(e);
     }
