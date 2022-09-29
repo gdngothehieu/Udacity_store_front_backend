@@ -20,7 +20,33 @@ Your application must make use of the following libraries:
 * build folder `./dist`
 
 You should install some dependencies by running `npm i`
+Make sure that you're inside the project root in your terminal
 
+You should install some dependencies by running npm i and write the name of each of the following :
+
+bcrypt 
+body-parser 
+db-migrate 
+db-migrate-pg 
+dotenv 
+express 
+jsonwebtoken 
+pg 
+typescript 
+@types/bcrypt
+@types/express
+@types/jasmine
+@types/jsonwebtoken
+@types/node
+@types/pg
+@types/supertest
+jasmine
+jasmine-spec-reporter
+supertest
+ts-node
+tsc-watch
+
+All these packages are listed in package.json file and you can install them all by running npm i in your terminal.
 Remember our scripts in `package.json` file :
 
 - To build your project in a dist file, type in terminal
