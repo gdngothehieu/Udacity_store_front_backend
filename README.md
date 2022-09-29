@@ -14,6 +14,16 @@ Your application must make use of the following libraries:
 - jasmine from npm for testing
 
 * Move to directory ./Udacity_store_front_backend
+* Add a file name ".env" with the following content:
+  MY_HOST=localhost
+  MY_DB=postgres
+  MY_TEST_DB=postgres
+  MY_USER=postgres
+  MY_PASSWORD=postgres
+  MY_ENV=test
+  PEPPER=pepper
+  SALT_ROUNDS=salt_rounds
+  TOKEN_SECRET=token_secret
 * Open server at 3000
 * Postgresql port at 5432
 * Source code `./src`
