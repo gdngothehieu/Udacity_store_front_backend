@@ -17,11 +17,17 @@ Your application must make use of the following libraries:
 
 1- you need to enter psql postgresql environment usnig command:
 
+- Create User:
+
+```
+CREATE USER postgres WITH PASSWORD 'postgres';
+```
+
 ```
 psql -U username postgres
 ```
 
-and enter the password related to username.
+and enter the password 'postgres' related to username.
 
 Note that the postgresql port used is: `5432`.
 
@@ -57,7 +63,7 @@ To connect to a dev database we type in terminal:
 - Move to directory ./Udacity_store_front_backend
 - Add a file name ".env" with the following content:
   MY_HOST=localhost
-  MY_DB=postgres
+  MY_DB=store_front_dev
   MY_TEST_DB=store_front_test
   MY_USER=postgres
   MY_PASSWORD=postgres

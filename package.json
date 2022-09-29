@@ -10,7 +10,7 @@
     "dev": "npm run build-window && tsc-watch --esModuleInterop src/server.ts --outDir ./dist --onSuccess \"node ./dist/server.js\"",
     "delete_TEST_DB": "db-migrate db:drop store_front_test",
     "migrate_up": "db-migrate up --env test",
-    "test": "npm run delete_TEST_DB && db-migrate db:create abc --env create && npm run migrate_up && npm run build-window && jasmine && npm run delete_TEST_DB"
+    "test": "npm run delete_TEST_DB && db-migrate db:create store_front_test --env create && npm run migrate_up && npm run build-window && jasmine && npm run delete_TEST_DB"
   },
   "author": "Udacity",
   "license": "ISC",
