@@ -13,8 +13,49 @@ Your application must make use of the following libraries:
 - jsonwebtoken from npm for working with JWTs
 - jasmine from npm for testing
 
-* Move to directory ./Udacity_store_front_backend
-* Add a file name ".env" with the following content:
+### Setup PostgreSql databases
+
+1- you need to enter psql postgresql environment usnig command:
+
+```
+psql -U username postgres
+```
+
+and enter the password related to username.
+
+Note that the postgresql port used is: `5432`.
+
+2- Create 2 databases using psql postgresql, one database for real developmente process and the othe is for testing, you can create the database in postgresql command environment using the command:
+
+```
+CREATE DATABASE store_front_dev;
+CREATE DATABASE store_front_test;
+```
+
+Here we used 'store_front_dev' as the name for development database, and 'store_front_test' for tesing database.
+
+3- To connect to a test database we type in terminal:
+
+```
+\c store_front_test
+```
+
+To connect to a dev database we type in terminal:
+
+```
+\c store_front_dev
+```
+
+4- To exit from postgres environment we type in terminal
+
+```
+\q
+```
+
+### Setup Server and PostgreSQL connection
+
+- Move to directory ./Udacity_store_front_backend
+- Add a file name ".env" with the following content:
   MY_HOST=localhost
   MY_DB=postgres
   MY_TEST_DB=store_front_test
@@ -24,10 +65,10 @@ Your application must make use of the following libraries:
   PEPPER=pepper
   SALT_ROUNDS=salt_rounds
   TOKEN_SECRET=token_secret
-* Open server at 3000
-* Postgresql port at 5432
-* Source code `./src`
-* build folder `./dist`
+- Open server at 3000
+- Postgresql port at 5432
+- Source code `./src`
+- build folder `./dist`
 
 You should install some dependencies by running `npm i`
 Make sure that you're inside the project root in your terminal
