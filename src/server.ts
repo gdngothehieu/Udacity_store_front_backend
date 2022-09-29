@@ -14,8 +14,8 @@ userRoutes(app);
 productRoutes(app);
 orderRoutes(app);
 
-app.listen(3000, function () {
-  console.log(`starting app on: ${address}`);
+app.listen(3000, () => {
+  console.log(`Starting app on: ${address}`);
 });
 
 export default app;

@@ -4,12 +4,13 @@
   "description": "## Getting Started",
   "main": "server.ts",
   "scripts": {
-    "build": " npx tsc",
+    "build-window": "rmdir dist | echo 'Y' &&  npx tsc",
+    "build-linux": "rm -r dist && npx tsc",
     "start": "ts-node src/server.ts",
-    "watch": "npm run build && tsc-watch --esModuleInterop src/server.ts --outDir ./dist --onSuccess \"node ./dist/server.js\"",
-    "delete_test": "db-migrate db:drop test_db",
+    "watch": "npm run build-window && tsc-watch --esModuleInterop src/server.ts --outDir ./dist --onSuccess \"node ./dist/server.js\"",
+    "delete_TEST_DB": "db-migrate db:drop storefront_test",
     "migrate_up": "db-migrate up --env test",
-    "test": "npm run delete_test && db-migrate db:create test_db --env create && npm run migrate_up && npm run build && jasmine && npm run delete_test"
+    "test": "npm run delete_TEST_DB && db-migrate db:create storefront_test --env create && npm run migrate_up && npm run build-window && jasmine && npm run delete_TEST_DB"
   },
   "author": "Udacity",
   "license": "ISC",

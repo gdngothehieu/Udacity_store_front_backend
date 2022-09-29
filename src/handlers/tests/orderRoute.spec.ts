@@ -4,13 +4,13 @@ import { token } from "./userRoute.spec";
 
 const request = supertest(app);
 
-describe("Testint Order Route", () => {
+describe("Testing Order Route", () => {
   it("Should create order with 'complete' status 201", () => {
     try {
       const order = {
-        productid: 1,
+        productId: 1,
         quantity: 5,
-        userid: 1,
+        userId: 1,
         status: "complete",
       };
       request
@@ -19,15 +19,17 @@ describe("Testint Order Route", () => {
         .set("Accept", "application/json")
         .set("Authorization", `Bearer ${token}`)
         .expect(201);
-    } catch (e) {}
+    } catch (e) {
+      console.log(e);
+    }
   });
 
   it("Should create order with status 201", async () => {
     try {
       const order = {
-        productid: 1,
-        quantity: 4,
-        userid: 1,
+        productId: 1,
+        quantity: 3,
+        userId: 1,
         status: "active",
       };
       const response = await request

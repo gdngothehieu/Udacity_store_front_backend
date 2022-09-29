@@ -11,10 +11,10 @@ describe("Testing Product Routes", () => {
     try {
       const product = {
         name: "Bubble Tea",
-        price: 22,
+        price: 15,
         category: "tea milk",
       };
-      await request
+      const response = await request
         .post("/products")
         .send(product)
         .set("Accept", "application/json")
@@ -27,7 +27,7 @@ describe("Testing Product Routes", () => {
 
   it("Should show product by its id with status 200", async () => {
     try {
-      await request.get("/products/1").expect(200);
+      const response = await request.get("/products/1").expect(200);
     } catch (e) {
       console.log(e);
     }

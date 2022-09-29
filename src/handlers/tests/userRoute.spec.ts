@@ -5,9 +5,7 @@ const request = supertest(app);
 
 export let token: string;
 describe("Testing User Routes", () => {
-  it("Should successfully create new user with status 201", async (done: (
-    err?: unknown
-  ) => void) => {
+  it("Should successfully create new user with status 201", async () => {
     try {
       const user = {
         firstName: "Hieu",
@@ -25,28 +23,26 @@ describe("Testing User Routes", () => {
     }
   });
 
-  it("1.2 Should show user by his/her id", (done: (err?: unknown) => void) => {
-    request
-      .get("/users/1")
-      .set("Authorization", `Bearer ${token}`)
-      .expect("Content-Type", /json/)
-      .expect(200)
-      .then((res) => {
-        done();
-      })
-      .catch((error) => done(error));
+  it("Should show user by his/her id", async () => {
+    try {
+      const response = await request
+        .get("/users/1")
+        .set("Authorization", `Bearer ${token}`)
+        .expect("Content-Type", /json/)
+        .expect(200);
+    } catch (e) {
+      console.log(e);
+    }
   });
 
-  it("1.3 Should show all Users", (done: (err?: unknown) => void) => {
-    request
-      .get("/users")
-      .set("Authorization", `Bearer ${token}`)
-      .expect("Content-Type", /json/)
-      .expect(200)
-      .then((res) => {
-        console.log(res.body);
-        done();
-      })
-      .catch((error) => done(error));
+  it("Should show all Users", async () => {
+    try {
+      const response = await request
+        .get("/users")
+        .set("Authorization", `Bearer ${token}`)
+        .expect(200);
+    } catch (e) {
+      console.log(e);
+    }
   });
 });
