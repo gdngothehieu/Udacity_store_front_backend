@@ -28,56 +28,26 @@ Your application must make use of the following libraries:
 
 **Make sure that you're inside the project root in your terminal**
 
-You should install some dependencies by running `npm i` and write the name of each of the following :
+You should install some dependencies by running `npm i`
 
-- `bcrypt` : for hashing passwords
-- `body-parser` : for parsing to json format
-- `db-migrate` : for migrations
-- `db-migrate-pg` : for migrations
-- `dotenv` : for managing environment variables
-- `express` : to make your app an instance of it
-- `jsonwebtoken` : for generating JWTs and validating them
-- `pg` : because I work on a postgres database
-- `typescript` : to write your project in typescript
-
-==> In addition to that you can install `db-migrate` globally by running : `npm i -g db-migrate` to use it globally
-
-Also you should install some devDependencies by running `npm i -D` and write the name of each of the following :
-
-- `@types/bcrypt` : for bcrypt package
-- `@types/express` : for express package
-- `@types/jasmine` : for jasmine package
-- `@types/jsonwebtoken` : for jsonwebtoken package
-- `@types/node` : for node
-- `@types/pg` : for pg package
-- `@types/supertest` : for supertest package
-- `jasmine` : for running tests on your project
-- `jasmine-spec-reporter` : for testing reporters
-- `supertest` : for testing endpoints
-- `ts-node` : for running `server.ts`
-- `tsc-watch` : for running `server.js`
-
-==> In addition to that you can install `ts-node` globally by running : `npm i -g ts-node` to use it globally
-
-**All** these packages are listed in `package.json` file and you can install them all by running `npm i` in your terminal.
 
 ### 2. Scripts
 
 Remember our scripts in `package.json` file :
 
-- **To build your project** : in your terminal run
+- To build your project in a dist file, type in terminal
 
 ```
 npm run build
 ```
 
-- **To run your server from `server.ts` file** : in your terminal run
+- To start your project in production mode, type in terminal
 
 ```
 npm run start
 ```
 
-- **To run your server from `server.js` file** : in your terminal run
+- To run a watch development mode, type in terminal
 
 ```
 npm run watch
@@ -89,17 +59,7 @@ _( preferable as if you save any change, it restart the server itself )._
 
 ```
 npm run test
-```
-
---> First, it deletes the TEST_Database created on the configuration `test`, then it creates another one through configuration `create`.
-
---> It runs migrations on this TEST_Database , rebuild the project and then runs tests on it.
-
---> Finally it deletes this database.
-
-## NOTE :
-
-I put `process.env.MY_ENV = 'test'` in `reporter.ts` file (its path : `./src/**/tests/helpers/reporter.ts`) instead of setting it in the script itself so that `jasmine` can read it and run tests on this environment, and you'll see the word `test` is looged to the terminal before jasmine is starting to run.
+``` 
 
 ### 3. Plan to Meet Requirements
 
