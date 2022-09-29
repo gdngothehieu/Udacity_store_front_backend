@@ -97,9 +97,7 @@ describe("Testing Order Route", () => {
         .set("Accept", "application/json")
         .set("Authorization", `Bearer ${token}`)
         .expect(201);
-    } catch (e) {
-      console.log(e);
-    }
+    } catch (e) {}
   });
 
   it("Should get orders by order_id foreign key with status 200", async () => {

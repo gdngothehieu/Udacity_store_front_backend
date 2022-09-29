@@ -5,9 +5,7 @@ import { token } from "./userRoute.spec";
 const request = supertest(app);
 
 describe("Testing Product Routes", () => {
-  it("Should create new product with status 201", async (done: (
-    err?: unknown
-  ) => void) => {
+  it("Should create new product with status 201", async () => {
     try {
       const product = {
         name: "Bubble Tea",
@@ -20,7 +18,6 @@ describe("Testing Product Routes", () => {
         .set("Accept", "application/json")
         .set("Authorization", `Bearer ${token}`)
         .expect(201);
-      done();
     } catch (e) {
       console.log(e);
     }
